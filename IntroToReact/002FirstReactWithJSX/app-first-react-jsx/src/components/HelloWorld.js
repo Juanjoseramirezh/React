@@ -1,4 +1,4 @@
-import React from 'react'
+import React, from 'react'
 
 // cuando quiero fragmentar las partes del html
 
