@@ -7,12 +7,13 @@ class personCard extends React.Component {
         this.state = { currentAge: null }
     }
 
-    // metodo de la clase (pripia)
+    // metodo de la clase (propio)
     handleOnClick() {
         // destructuramos
         const {
             props: { age },
-            state: { currentAge } } = this
+            state: { currentAge }
+        } = this
 
         // Operacion ternaria
         // const initialAge = !currentAge ? age : currentAge
@@ -20,13 +21,9 @@ class personCard extends React.Component {
         this.setState(() => ({ currentAge: initialAge + 1 }))
     }
 
-
-
-
-
-
     //METODO HEREDADO
     render() {
+        console.log(this)
         // destructuramos el props
         const { firstName, lastName, age, hairColor } = this.props
         const { currentAge } = this.state
@@ -37,6 +34,9 @@ class personCard extends React.Component {
                 </h1>
                 <p>
                     Age: {currentAge || age}
+                </p>
+                <p>
+                    Hair Color: {hairColor}
                 </p>
                 <p>
                     <button onClick={() => this.handleOnClick()} >
