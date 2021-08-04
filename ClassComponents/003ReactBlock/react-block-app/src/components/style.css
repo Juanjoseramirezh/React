@@ -1,0 +1,44 @@
+.header-green{
+    background-color: #6aa84f;
+    height: 150px;
+    width: 60%;
+    margin: auto;
+}
+
+.navigation-blue{
+    background-color: #6fa8dc;
+    width: 200px;
+    min-height: 300px;
+    margin: 20px 0px 0px 40px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main-red{
+    background-color: #e06666;
+    width: 650px;
+    min-height: 500px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.div-subcontent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.subcontent-yellow{
+    background-color: #ffd966;
+    width: 190px;
+    min-height: 250px;
+    margin: 12px;
+    display: inline-block;
+}
+
+.advertisment-purple{
+    background-color:#b4a7d6 ;
+    width: 600x;
+    min-height: 150px;
+    margin: 10px 10px;
+}
