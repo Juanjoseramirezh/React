@@ -1,4 +1,5 @@
 import PersonCard from './components/PersonCard'
+import UserForm from './components/UserForm'
 
 function App() {
 
@@ -11,9 +12,10 @@ function App() {
 
   return (
     <div className="App">
-      {person.map((person, index) => (
+      {/* {person.map((person, index) => (
         <PersonCard key={index}{...person} />
-      ))}
+      ))} */}
+      <UserForm />
     </div>
   );
 }
