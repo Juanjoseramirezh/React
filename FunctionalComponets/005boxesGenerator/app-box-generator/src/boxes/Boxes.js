@@ -4,25 +4,26 @@ const Boxes = () => {
 
     //const square = ['#f50018', '#006ef5', '#00f531']
 
-    const [square, setSquare] = useState([])
-    const [newSquare, setNewSquare] = useState({})
+    const [squares, setSquares] = useState([])
+    const [newSquare, setNewSquare] = useState({ color: '', dimensions: '' })
 
-
-    // esta es la forma de actualizar ARREGLOS con el state
-    const addButton = e => {
-        e.preventDefault()
-        setSquare([...square, newSquare])
-        //Bonus ninja
-        //setColor()
-        setNewSquare()
-    }
 
     // Esta es la formula de actualizar OBJETOS con el state
     const onChangeHandler = ({ target: { value, name } }) => {
         const currentSquare = {} //objeto vacio
         currentSquare[name] = value
-        setSquare({ ...newSquare, ...currentSquare })
+        setNewSquare({ ...newSquare, ...currentSquare })
 
+    }
+
+    // esta es la forma de actualizar ARREGLOS con el state
+    const addButton = e => {
+        e.preventDefault()
+        setSquares([...squares, newSquare])
+        //Bonus ninja
+        //setColor()
+
+        setNewSquare({ color: '', dimensions: '' })
     }
 
 
@@ -31,7 +32,7 @@ const Boxes = () => {
             <form onSubmit={addButton}>
                 <div>
                     <label>Color</label>
-                    <input value={newSquare.color || ""} name='color' onChange={onChangeHandler} type="text" />
+                    <input value={newSquare.color} name='color' onChange={onChangeHandler} type="text" />
                 </div>
                 <div>
                     <label>Dimensiones</label>
@@ -39,8 +40,8 @@ const Boxes = () => {
                 </div>
                 <input type="submit" value="Add Box" />
             </form>
-            <div style={{ display: 'flex' }}>
-                {square.map(({ color, dimensions }, key) => {
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {squares.map(({ color, dimensions }, key) => {
                     const style = { backgroundColor: color, height: +dimensions, width: +dimensions, margin: 20 }
                     return < div key={key} style={style} />
                 })}
